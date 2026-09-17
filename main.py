@@ -180,7 +180,9 @@ class ExtendedCalculator:
         if not self.expression:
             return
         try:
-            val = float(eval(self.expression.replace("%", "/100"), {"__builtins__": None}, {}))
+            val = float(
+                eval(self.expression.replace("%", "/100"), {"__builtins__": None}, {})
+            )
             result = func(val)
             if result.is_integer():
                 result = int(result)
